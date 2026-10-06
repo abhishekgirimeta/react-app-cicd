@@ -1,0 +1,16 @@
+name: Test AWS OIDC
+
+on:
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  oidc-debug:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Debug OIDC claims
+        uses: github/actions-oidc-debugger@main
